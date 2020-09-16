@@ -35,67 +35,67 @@ class ORM {
     }
 
     // Helper function to convert object key/value pairs to SQL syntax
-  objToSql(ob) {
-    const arr = [];
+    objToSql(ob) {
+        const arr = [];
 
-    // loop through the keys and push the key/value as a string int arr
-    for (let key in ob) {
-      const value = ob[key];
-      // check to skip hidden properties
-      if (Object.hasOwnProperty.call(ob, key)) {
-        // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
-        if (typeof value === "string" && value.indexOf(" ") >= 0) {
-          value = "'" + value + "'";
+        // loop through the keys and push the key/value as a string int arr
+        for (let key in ob) {
+            const value = ob[key];
+            // check to skip hidden properties
+            if (Object.hasOwnProperty.call(ob, key)) {
+                // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+                if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                    value = "'" + value + "'";
+                }
+                // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+                // e.g. {sleepy: true} => ["sleepy=true"]
+                arr.push(key + "=" + value);
+            }
         }
-        // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-        // e.g. {sleepy: true} => ["sleepy=true"]
-        arr.push(key + "=" + value);
-      }
+
+        // translate array of strings to a single comma-separated string
+        return arr.toString();
     }
 
-    // translate array of strings to a single comma-separated string
-    return arr.toString();
-  }
+    // Object for all our SQL statement functions.
+    selectAll(tableInput) {
+        return this.query("SELECT * FROM " + tableInput + ";");
+    }
 
-  // Object for all our SQL statement functions.
-  selectAll(tableInput) {
-    return this.query("SELECT * FROM " + tableInput + ";");
-  }
+    insertOne(table, cols, vals) {
+        let queryString = "INSERT INTO " + table;
 
-  insertOne(table, cols, vals) {
-    let queryString = "INSERT INTO " + table;
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += this.printQuestionMarks(vals.length);
+        queryString += ");";
 
-    queryString += " (";
-    queryString += cols.toString();
-    queryString += ") ";
-    queryString += "VALUES (";
-    queryString += this.printQuestionMarks(vals.length);
-    queryString += ");";
+        console.log(queryString);
 
-    console.log(queryString);
+        return this.query(queryString, vals);
+    }
+    // An example of objColVals would be {name: panther, sleepy: true}
+    updateOne(table, objColVals, condition) {
+        let queryString = "UPDATE " + table;
 
-    return this.query(queryString, vals);
-  }
-  // An example of objColVals would be {name: panther, sleepy: true}
-  updateOne(table, objColVals, condition) {
-    let queryString = "UPDATE " + table;
+        queryString += " SET ";
+        queryString += this.objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
 
-    queryString += " SET ";
-    queryString += this.objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+        console.log(queryString);
+        return this.query(queryString);
+    }
 
-    console.log(queryString);
-    return this.query(queryString);
-  }
+    deleteOne(table, condition) {
+        let queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
 
-  deleteOne(table, condition) {
-    let queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
-
-    return this.query(queryString);
-  }
+        return this.query(queryString);
+    }
 
 }
 
