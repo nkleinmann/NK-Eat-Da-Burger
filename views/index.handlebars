@@ -4,15 +4,45 @@
 
 
 <div class="body">
-<section class="container-fluid">
-  <div class="row">
-    <section class="col-12">
-      <h2 class="d-flex justify-content-center">Delicious Burgers!</h2>
-    </section>
-  </div>
-</section>
 
-{{!-- <div class="row">
+  <section class="container-fluid">
+    <div class="row">
+      <section class="col-12">
+        {{!-- <h2 class="d-flex justify-content-center">Delicious Burgers!</h2> --}}
+      </section>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-3 ml-1 card">
+        <h3>
+          first box
+        </h3>
+      </div>
+
+      <div class="col-3 ml-4 card">
+        <h3>
+          second box
+        </h3>
+      </div>
+
+
+
+    </div>
+
+
+  </section>
+
+  <div class="row form justify-content-center">
+    <div class="col-8 form-group mt-5 text-center">
+      <button for="newBurger" class="btn btn-danger mb-3">Devour it!</button><br>
+      <input type="burger" name="devour" value="Burger" checked> Devoured!<br>
+      <button type="submit" class="btn btn-primary mt-3" name="devour" value="0"> Submit</button>
+      <p>Enter a burger you would like to eat and click submit.</p>
+    </div>
+    
+  </div>
+
+  {{!-- <div class="row">
 
     <section class="col-12">
       <ul>
@@ -27,11 +57,11 @@
   </div> --}}
 
 </div>
-  
 
-  
 
-  {{!-- <h2>Burgers that are devoured!</h2>
+
+
+{{!-- <h2>Burgers that are devoured!</h2>
 
 <ul>
   {{#each burger}}
@@ -50,16 +80,10 @@
   </div>
 
   <div class="form-group">
-    <label for="sleepy">Devoured?</label><br>
-    <input type="radio" name="devour" value="1" checked> Devoured!<br>
-    <input type="radio" name="devour" value="0"> Waiting to be devoured
+    <label for="newBurger">Devoured?</label><br>
+    <input type="burger" name="devour" value="1" checked> Devoured!<br>
+    <input type="submit" class="btn btn-primary" name="devour" value="0"> Submit
   </div>
 
   <button type="submit">Add Burger</button>
 </form>  --}}
-
-
-
-
-
-
