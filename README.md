@@ -5,7 +5,8 @@ Restaurant application that allows users to input burger names and note if they 
 Techonologies used: HTML, CSS, JavaScript, Node JS, Handlebars, MySQL
 
 Link to deployed site: [Eat-Da-Burger](#)
-Linke to GitHub repository: [GitHub](https://github.com/nkleinmann/NK-Eat-Da-Burger-)
+
+Link to GitHub repository: [GitHub](https://github.com/nkleinmann/NK-Eat-Da-Burger-)
             
 ## Table of Contents:
 1. [Installation](#installation)
