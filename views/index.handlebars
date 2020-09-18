@@ -35,26 +35,27 @@
   <div class="row form justify-content-center">
     <div class="col-8 form-group mt-5 text-center">
       <button for="newBurger" class="btn btn-danger mb-3">Devour it!</button><br>
-      <input type="burger" name="devour" value="Burger" checked> Devoured!<br>
-      <button type="submit" class="btn btn-primary mt-3" name="devour" value="0"> Submit</button>
+      <input type="burger" name="devour" value="Burger" class="input" checked> Devoured!<br>
+      <button type="submit" class="btn btn-primary mt-3 submit" name="devour" value="0"> Submit</button>
       <p>Enter a burger you would like to eat and click submit.</p>
     </div>
     
   </div>
 
-  {{!-- <div class="row">
+  <div class="row">
 
     <section class="col-12">
       <ul>
         {{#each burgers}}
         {{#unless devoured}}
-        {{> burger-block devoured=false}}
+        {{!-- referencing to object in burgers_controller.js --}}
+        <li>{{this.burger_name}}</li>
         {{/unless}}
         {{/each}}
       </ul>
     </section>
 
-  </div> --}}
+  </div>
 
 </div>
 

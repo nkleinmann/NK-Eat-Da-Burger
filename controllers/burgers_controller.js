@@ -7,17 +7,20 @@ const burger = require("../models/burger.js");
 router.get("/", async function(req, res) {
     const hbsObject = { burgers: await burger.selectAll() };
     console.log(hbsObject);
+
+    // allows access in index.handlebars to access object from database
     res.render("index", hbsObject);
   });
   
   router.post("/api/burgers", async function(req, res) {
+    console.log(req.body);
     try {
       const result = await burger.insertOne(
         [
-          "name", "sleepy"
+          "burger_name", "devoured"
         ],
         [
-          req.body.name, req.body.sleepy
+          req.body.name, false
         ]
       );
       // Send back the ID of the new quote

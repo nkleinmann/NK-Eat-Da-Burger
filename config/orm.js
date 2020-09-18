@@ -69,7 +69,7 @@ class ORM {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += this.printQuestionMarks(vals.length);
+        queryString += this.printQuestionMarks(vals);
         queryString += ");";
 
         console.log(queryString);
