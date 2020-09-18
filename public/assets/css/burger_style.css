@@ -1,3 +1,8 @@
+body.main-section {
+    font-family: 'Dosis', sans-serif;
+    background-image: url("https://cdn.pixabay.com/photo/2012/04/05/00/36/hamburger-25358_1280.png");
+}
+
 div.body {
     background-color: rgb(175, 247, 199);
 }
