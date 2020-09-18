@@ -100,4 +100,4 @@ class ORM {
 }
 
 // Export the orm object for the model
-module.exports = ORM;
+module.exports = new ORM(connection);

@@ -5,14 +5,14 @@ const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", async function(req, res) {
-    const hbsObject = { burgers: await burger.all() };
+    const hbsObject = { burgers: await burger.selectAll() };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
   
   router.post("/api/burgers", async function(req, res) {
     try {
-      const result = await burger.create(
+      const result = await burger.insertOne(
         [
           "name", "sleepy"
         ],
@@ -35,7 +35,7 @@ router.get("/", async function(req, res) {
     console.log("condition", condition);
   
     try {
-      const result = await cat.update({ sleepy: req.body.sleepy }, condition);
+      const result = await burger.updateOne({ sleepy: req.body.sleepy }, condition);
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
