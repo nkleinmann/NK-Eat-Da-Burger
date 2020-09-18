@@ -1,21 +1,35 @@
-<h1 class="text-center">Burgers!</h1>
+<header class="header">
+  <h1 class="text-center">Burgers!</h1>
+</header>
 
-<h2 class="text-center">Delicious Burgers!</h2>
 
-{{!-- <ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul> --}}
+<div class="body container-fluid">
+  <div class="row">
+    <section class="col-12">
+      <h2 class="d-flex justify-content-center">Delicious Burgers!</h2>
+    </section>
+  </div>
 
-{{!-- <h2>Burgers that are devoured!</h2>
+  {{!-- <div class="row">
+
+    <section class="col-12">
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </section>
+
+  </div> --}}
+
+  {{!-- <h2>Burgers that are devoured!</h2>
 
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
+  {{#each burger}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -29,10 +43,16 @@
   </div>
 
   <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <label for="sleepy">Devoured?</label><br>
+    <input type="radio" name="devour" value="1" checked> Devoured!<br>
+    <input type="radio" name="devour" value="0"> Waiting to be devoured
   </div>
 
   <button type="submit">Add Burger</button>
 </form>  --}}
+
+</div>
+
+
+
+
