@@ -14,9 +14,13 @@
 
     <div class="row justify-content-center">
       <div class="col-3 ml-1 card">
-        <h3>
-          first box
-        </h3>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>{{this.burger_name}}</li>
+        {{/unless}}
+        {{/each}}
+      </ul>
       </div>
 
       <div class="col-3 ml-4 card">
@@ -44,16 +48,7 @@
 
   <div class="row">
 
-    <section class="col-12">
-      <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{!-- referencing to object in burgers_controller.js --}}
-        <li>{{this.burger_name}}</li>
-        {{/unless}}
-        {{/each}}
-      </ul>
-    </section>
+    
 
   </div>
 

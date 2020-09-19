@@ -2,7 +2,9 @@
 
 Restaurant application that allows users to input burger names and note if they have devoured the burgers or not.
 
-Techonologies used: HTML, CSS, JavaScript, Node JS, Handlebars, MySQL
+Techonologies used: HTML, CSS, JavaScript, jQuery, Node, Express, Handlebars, MySQL, and a homemade ORM (yum!)
+
+Followed the MVC design pattern and used Node and MySQL to query and route data in the app. I used Handlebars to generate your HTML.
 
 Link to deployed site: [Eat-Da-Burger](#)
 
