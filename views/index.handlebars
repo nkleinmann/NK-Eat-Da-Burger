@@ -6,33 +6,28 @@
 <div class="body">
 
   <section class="container-fluid">
-    <div class="row">
-      <section class="col-12">
-        {{!-- <h2 class="d-flex justify-content-center">Delicious Burgers!</h2> --}}
-      </section>
-    </div>
-
+  
     <div class="row justify-content-center">
-      <div class="col-3 ml-1 card">
+      <div class="col-4 card">
         <h5><strong>Desired burgers:</strong></h5>
+        <hr>
           {{#each burgers}}
           {{#unless devoured}}
           <input type="radio" class="newBurger" data-id="{{this.id}}" name="radioBtn">{{this.burger_name}}</input>
+          <hr>
           {{/unless}}
           {{/each}}
       </div>
 
-      <div class="col-3 ml-4 card">
+      <div class="col-4 ml-4 card">
         <h5><strong>Devoured burgers:</strong></h5>
-        <ul>
+        <hr>
           {{#each burgers}}
           {{#if devoured}}
           <input type="radio" class="newBurger" data-id="{{this.id}}" data-newdevoured="{{devoured}}" name="radioBtn">{{this.burger_name}}</input>
-          {{!-- <li class="listEl">{{this.burger_name}}</li> --}}
-          {{!-- {{> cats/cat-block sleep=false}} --}}
+          <hr>
           {{/if}}
           {{/each}}
-        </ul>
       </div>
 
 

@@ -26,7 +26,8 @@ Restuarant application
 
 Screenshots:
 ![1](https://user-images.githubusercontent.com/65608809/93687753-130adb00-fa8e-11ea-9785-00cd2480ac39.jpg)
-![2](https://user-images.githubusercontent.com/65608809/93687757-1605cb80-fa8e-11ea-8c8b-de2a266857fa.jpg)
+![burger](https://user-images.githubusercontent.com/65608809/93687855-3aae7300-fa8f-11ea-8936-78d83e55405f.jpg)
+
 
             
 ## Contributing:

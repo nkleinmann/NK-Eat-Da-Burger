@@ -55,7 +55,7 @@ $(function () {
 
     burgerDevour.on("click", function () {
         console.log("Devoured!")
-        // var id = $(this).data("id");
+       
         let newDevour = $(this).data("newdevoured");
 
         let newDevourState = {
