@@ -20,7 +20,8 @@ $(function() {
     //     })
     // });
 
-    $(".change-devoured").on("click", function(event) {
+    $("button.devourBurger").on("click", function(event) {
+        console.log("hi")
         var id = $(this).data("id");
         var newDevour = $(this).data("newdevoured");
     
@@ -47,7 +48,7 @@ $(function() {
     
         var newBurger = {
           name: $(".input").val().trim(),
-          sleepy: $("[name=devour]:checked").val().trim()
+          devoured: $("[name=devour]:checked").val().trim()
         };
     
         // Send the POST request.
@@ -56,14 +57,14 @@ $(function() {
           data: newBurger
         }).then(
           function() {
-            console.log("created new burgr");
+            console.log("created new burger");
             // Reload the page to get the updated list
             location.reload();
           }
         );
       });
     
-      $(".delete-burger").on("click", function(event) {
+      $(".deleteBurger").on("click", function(event) {
         var id = $(this).data("id");
     
         // Send the DELETE request.

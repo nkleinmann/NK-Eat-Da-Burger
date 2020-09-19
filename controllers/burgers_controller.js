@@ -56,7 +56,7 @@ router.get("/", async function(req, res) {
     const condition = "id = " + req.params.id;
   
     try {
-      const result = await burger.delete(condition)
+      const result = await burger.deleteOne(condition)
       if (result.affectedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();

@@ -14,19 +14,26 @@
 
     <div class="row justify-content-center">
       <div class="col-3 ml-1 card">
-      <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        <li>{{this.burger_name}}</li>
-        {{/unless}}
-        {{/each}}
-      </ul>
+        <h5><strong>Desired burgers:</strong></h5>
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          <li>{{this.burger_name}}</li>
+          {{/unless}}
+          {{/each}}
+        </ul>
       </div>
 
       <div class="col-3 ml-4 card">
-        <h3>
-          second box
-        </h3>
+        <h5><strong>Devoured burgers:</strong></h5>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <li>{{this.burger_name}}</li>
+          {{!-- {{> cats/cat-block sleep=false}} --}}
+          {{/if}}
+          {{/each}}
+        </ul>
       </div>
 
 
@@ -38,17 +45,23 @@
 
   <div class="row form justify-content-center">
     <div class="col-8 form-group mt-5 text-center">
-      <button for="newBurger" class="btn btn-danger mb-3">Devour it!</button><br>
-      <input type="burger" name="devour" value="Burger" class="input" checked> Devoured!<br>
-      <button type="submit" class="btn btn-primary mt-3 submit" name="devour" value="0"> Submit</button>
-      <p>Enter a burger you would like to eat and click submit.</p>
+      <button for="newBurger" class="btn btn-success mb-4 devourBurger">DEVOUR it!</button>
+      <button for="newBurger" class="btn btn-danger mb-4 deleteBurger">DELETE it!</button>
+      <p>Enter a burger you would like to eat and click submit or click on a burger from the above list and devour it by clicking on devour! Enjoy!</p>
+      <input type="burger" name="devour" class="input" checked><br>
+      
+      <div class="row">
+        <section class="col-12">
+          <button type="submit" class="btn btn-primary submit mt-4" name="devour" value="0"> Submit</button>
+        </section>
+      </div>
     </div>
-    
+
   </div>
 
   <div class="row">
 
-    
+
 
   </div>
 
