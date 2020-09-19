@@ -31,26 +31,6 @@ router.get("/", async function(req, res) {
       res.status(500).json(err);
     }
   });
-  
-  // router.put("/api/burgers/:id", async function(req, res) {
-  //   const condition = "id = " + req.params.id;
-  
-  //   console.log("condition", condition);
-  
-  //   try {
-  //     const result = await burger.updateOne({ sleepy: req.body.sleepy }, condition);
-  //     if (result.changedRows == 0) {
-  //       // If no rows were changed, then the ID must not exist, so 404
-  //       return res.status(404).end();
-  //     } else {
-  //       res.status(200).end();
-  //     }
-  //   }
-  //   catch (err) {
-  //     console.error(err);
-  //     res.status(500).json(err);
-  //   }
-  // });
 
   router.put("/api/burgers/:id", async function(req, res) {
     console.log("in the put route");
