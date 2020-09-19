@@ -27,7 +27,8 @@
         <ul>
           {{#each burgers}}
           {{#if devoured}}
-          <li class="listEl">{{this.burger_name}}</li>
+          <input type="radio" class="newBurger" data-id="{{this.id}}" data-newdevoured="{{devoured}}" name="radioBtn">{{this.burger_name}}</input>
+          {{!-- <li class="listEl">{{this.burger_name}}</li> --}}
           {{!-- {{> cats/cat-block sleep=false}} --}}
           {{/if}}
           {{/each}}
