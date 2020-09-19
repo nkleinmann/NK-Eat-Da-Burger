@@ -6,7 +6,7 @@ Techonologies used: HTML, CSS, JavaScript, jQuery, Node, Express, Handlebars, My
 
 Followed the MVC design pattern and used Node and MySQL to query and route data in the app. I used Handlebars to generate the HTML.
 
-Link to deployed site: [Eat-Da-Burger](#)
+Link to deployed site: [Eat-Da-Burger](https://pure-earth-06219.herokuapp.com/)
 
 Link to GitHub repository: [GitHub](https://github.com/nkleinmann/NK-Eat-Da-Burger-)
             
