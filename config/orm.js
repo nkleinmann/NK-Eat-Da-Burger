@@ -1,4 +1,4 @@
-connection = require("../config/connection.js");
+// connection = require("../config/connection.js");
 
 // Import MySQL connection.
 class ORM {
@@ -100,4 +100,4 @@ class ORM {
 }
 
 // Export the orm object for the model
-module.exports = new ORM(connection);
+module.exports = ORM;
