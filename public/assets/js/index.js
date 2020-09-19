@@ -62,13 +62,13 @@ $(function () {
             devour: true
         };
 
-console.log(id, 'IS THE ID');
-console.log(newDevourState, 'IS THE newDevourState');
+        console.log(id, 'IS THE ID');
+        console.log(newDevourState, 'IS THE newDevourState');
 
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: newDevourState
+            // data: newDevourState
         }).then(
             function (data) {
                 console.log("changed devour to", newDevour);
