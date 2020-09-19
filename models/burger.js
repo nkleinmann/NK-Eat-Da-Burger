@@ -1,19 +1,19 @@
 // Import the ORM to create functions that will interact with the database.
-const dbManger = require("../config/burgerDbManager.js");
+const dbManager = require("../config/burgerDbManager");
 
 let burger = {
   selectAll: function() {
-    return dbManger.selectAll("burgers");
+    return dbManager.selectAll("burgers");
   },
   // The variables cols and vals are arrays.
   insertOne: function(cols, vals) {
-    return dbManger.insertOne("burgers", cols, vals);
+    return dbManager.insertOne("burgers", cols, vals);
   },
   updateOne: function(objColVals, condition) {
-    return dbManger.updateOne("burgers", objColVals, condition);
+    return dbManager.updateOne("burgers", objColVals, condition);
   },
   deleteOne: function(condition) {
-    return dbManger.deleteOne("burgers", condition);
+    return dbManager.deleteOne("burgers", condition);
   }
 };
   
