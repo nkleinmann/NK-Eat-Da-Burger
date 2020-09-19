@@ -1,5 +1,6 @@
 $(function () {
     const submitButn = $("button.submit");
+    const burgerRadioButtons = $("input.newBurger");
     const burgerInput = $("input.input");
     const burgerDelete = $("button.deleteBurger");
     const burgerDevour = $("button.devourBurger");
@@ -8,11 +9,17 @@ $(function () {
     let burgerVal = "";
     let thisElVal = "";
 
-    listEl.on("click", function() {
+    let id = "";
+
+    listEl.on("click", function () {
         thisElVal = listEl.val();
         console.log(thisElVal);
     })
 
+
+    burgerRadioButtons.on("click", function () {
+        id = $(this).data("id");
+    });
 
     submitButn.on("click", function (event) {
         event.preventDefault();
@@ -32,13 +39,10 @@ $(function () {
             });
     });
 
-    burgerDelete.on("click", function () {
-        const id = $("input.newBurger").data("id");
-
+    burgerDelete.on("click", function (event) {
+        event.preventDefault();
         // Send the DELETE request.
-        $.ajax("/api/burgers" 
-        // / + id
-        , {
+        $.ajax("/api/burgers/" + id, {
             type: "DELETE"
         }).then(
             function () {
@@ -49,27 +53,27 @@ $(function () {
         );
     });
 
-    // $("button.devourBurger").on("click", function(event) {
-    //     console.log("hi")
-    //     var id = $(this).data("id");
-    //     var newDevour = $(this).data("newdevoured");
+    burgerDevour.on("click", function () {
+        console.log("Devoured!")
+        // var id = $(this).data("id");
+        var newDevour = $(this).data("newdevoured");
 
-    //     var newDevouredState = {
-    //       devour: newDevour
-    //     };
+        var newDevourState = {
+            devour: newDevour
+        };
 
-    //     // Send the PUT request.
-    //     $.ajax("/api/burgers/" + id, {
-    //       type: "PUT",
-    //       data: newDevourState
-    //     }).then(
-    //       function() {
-    //         console.log("changed devour to", newDevour);
-    //         // Reload the page to get the updated list
-    //         location.reload();
-    //       }
-    //     );
-    //   });
+        // Send the PUT request.
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: newDevourState
+        }).then(
+            function () {
+                console.log("changed devour to", newDevourState);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
 
     //   $(".submit").on("submit", function(event) {
     //     // Make sure to preventDefault on a submit event.
